@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
 import DashboardPage from '../components/dashboard/DashboardPage';
-import AddPostPage from '../components/add-post/AddPostPage';
+import AddPostPage from '../components/post-mgmt/AddPostPage';
 
 const AppRouter = () => (
     <BrowserRouter>

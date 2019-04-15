@@ -1,11 +1,13 @@
+import uuid from 'uuid';
+
 const defaultPostValues = [
     {
-        id: 1,
+        id: uuid(),
         title: 'The Very First',
         content: 'A quick brown fox jumps over the lazy dog.'
     },
     {
-        id: 2,
+        id: uuid(),
         title: 'The Second',
         content: 'The second coming is upon us.'
     }
