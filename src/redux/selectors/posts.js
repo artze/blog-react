@@ -1,7 +1,8 @@
 export const getPostSummaryListSelector = (posts) => {
     return posts.map((post) => ({
         id: post.id,
-        title: post.title
+        title: post.title,
+        createdAt: post.createdAt
     }))
 }
 

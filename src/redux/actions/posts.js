@@ -1,11 +1,13 @@
 import uuid from 'uuid';
+import moment from 'moment';
 
 export const addPost = ({title, content}) => ({
     type: 'ADD_POST',
     post: {
         id: uuid(),
         title,
-        content
+        content,
+        createdAt: moment().format('x')
     }
 })
 

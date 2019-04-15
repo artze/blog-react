@@ -4,12 +4,14 @@ const defaultPostValues = [
     {
         id: uuid(),
         title: 'The Very First',
-        content: 'A quick brown fox jumps over the lazy dog.'
+        content: 'A quick brown fox jumps over the lazy dog.',
+        createdAt: 321654654
     },
     {
         id: uuid(),
         title: 'The Second',
-        content: 'The second coming is upon us.'
+        content: 'The second coming is upon us.',
+        createdAt: 54894651111
     }
 ]
 

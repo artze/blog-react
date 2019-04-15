@@ -7,7 +7,7 @@ import { getPostSummaryListSelector } from '../../redux/selectors/posts';
 const PostList = (props) => (
     <div>
         { props.postSummaryList.map((post) => (
-            <PostListItem key={post.id} {...post} />
+            <PostListItem key={post.id} post={post} />
         )) }
     </div>
 )
