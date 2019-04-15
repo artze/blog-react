@@ -18,6 +18,17 @@ export default (state = defaultPostValues, action) => {
         case 'ADD_POST':
         return [...state, action.post];
 
+        case 'EDIT_POST':
+        return state.map((post) => {
+            if(post.id === action.post.id) {
+                return {
+                    ...post,
+                    ...action.post
+                }
+            }
+            return post;
+        })
+
         default: 
         return state;
     }

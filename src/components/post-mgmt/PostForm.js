@@ -4,8 +4,8 @@ class PostForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            title: '',
-            content: ''
+            title: this.props.post.title || '',
+            content: this.props.post.content || ''
         }
     }
 
@@ -34,12 +34,15 @@ class PostForm extends React.Component {
                     <input
                         type="text"
                         placeholder="Post Title"
+                        value={this.state.title}
                         onChange={this.onTitleChange}
                     />
                     <textarea
                         cols="30"
                         rows="10"
                         placeholder="Post content"
+                        value={this.state.content}
+                        onChange={this.onContentChange}
                     />
                     <button>
                         Submit

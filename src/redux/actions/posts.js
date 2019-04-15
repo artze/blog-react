@@ -8,3 +8,11 @@ export const addPost = ({title, content}) => ({
         content
     }
 })
+
+export const editPost = (id, updatedPost) => ({
+    type: 'EDIT_POST',
+    post: {
+        id,
+        ...updatedPost
+    }
+})

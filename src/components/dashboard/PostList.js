@@ -13,7 +13,7 @@ const PostList = (props) => (
 )
 
 const mapStateToProps = (state) => ({
-    postSummaryList: getPostSummaryListSelector(state)
+    postSummaryList: getPostSummaryListSelector(state.posts)
 })
 
 export default connect(mapStateToProps)(PostList);
