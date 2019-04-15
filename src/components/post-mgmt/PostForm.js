@@ -4,8 +4,8 @@ class PostForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            title: this.props.post.title || '',
-            content: this.props.post.content || ''
+            title: this.props.post ? this.props.post.title : '',
+            content: this.props.post ? this.props.post.content : ''
         }
     }
 

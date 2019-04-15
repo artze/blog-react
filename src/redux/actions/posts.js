@@ -16,3 +16,10 @@ export const editPost = (id, updatedPost) => ({
         ...updatedPost
     }
 })
+
+export const deletePost = (id) => ({
+    type: 'DELETE_POST',
+    post: {
+        id
+    }
+})

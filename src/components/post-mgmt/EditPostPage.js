@@ -3,11 +3,16 @@ import { connect } from 'react-redux';
 import Header from '../app/Header';
 import PostForm from '../post-mgmt/PostForm';
 import { getPostByIdSelector } from '../../redux/selectors/posts';
-import { editPost } from '../../redux/actions/posts';
+import { editPost, deletePost } from '../../redux/actions/posts';
 
 class EditPostPage extends React.Component {
     onSubmit = (updatedPost) => {
         this.props.editPost(updatedPost)
+        this.props.history.push('/');
+    }
+
+    onDeletePost = () => {
+        this.props.deletePost();
         this.props.history.push('/');
     }
 
@@ -20,6 +25,7 @@ class EditPostPage extends React.Component {
                     post={this.props.post}
                     onSubmit={this.onSubmit}
                 />
+                <button onClick={this.onDeletePost}>Remove Post</button>
             </div>
         )
     }
@@ -30,7 +36,8 @@ const mapStateToProps = (state, ownProps) => ({
 })
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
-    editPost: (updatedPost) => dispatch(editPost(ownProps.match.params.id, updatedPost))
+    editPost: (updatedPost) => dispatch(editPost(ownProps.match.params.id, updatedPost)),
+    deletePost: () => dispatch(deletePost(ownProps.match.params.id))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(EditPostPage);
