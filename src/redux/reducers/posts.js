@@ -1,6 +1,6 @@
 import uuid from 'uuid';
 
-const defaultPostValues = [
+const defaultPostState = [
     {
         id: uuid(),
         title: 'The Very First',
@@ -15,7 +15,7 @@ const defaultPostValues = [
     }
 ]
 
-export default (state = defaultPostValues, action) => {
+export default (state = defaultPostState, action) => {
     switch(action.type) {
         case 'ADD_POST':
         return [...state, action.post];

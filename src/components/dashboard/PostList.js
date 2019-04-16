@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 
 import PostListItem from './PostListItem';
 import { getPostSummaryListSelector } from '../../redux/selectors/posts';
+import { getPostsWithSearchFilterSelector } from '../../redux/selectors/search';
 
 const PostList = (props) => (
     <div>
@@ -13,7 +14,7 @@ const PostList = (props) => (
 )
 
 const mapStateToProps = (state) => ({
-    postSummaryList: getPostSummaryListSelector(state.posts)
+    postSummaryList: getPostSummaryListSelector(getPostsWithSearchFilterSelector(state.posts, state.search))
 })
 
 export default connect(mapStateToProps)(PostList);
